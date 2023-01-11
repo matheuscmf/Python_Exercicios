@@ -11,19 +11,22 @@ with open("laureates.csv", "r") as f:
 
 @app.route("/")
 def index():
-    # template found in templates/index.html
+    
     return render_template("index.html")
 
 
 @app.route("/laureates/")
 def laureate_list():
-    # template found in templates/laureate.html
+    
     results = []
     if not request.args.get("surname"):
         return jsonify(results)
 
-    # Your code here!
-    return "your code here!"
-
+    search_string = request.args.get("surname").lower().strip()
+    
+    for laureate in laureates:
+        if search_string in laureate("surname").lower():
+            results.append(laureate)
+    return jsonify(results)
 
 app.run(debug=True)
