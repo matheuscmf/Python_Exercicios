@@ -137,7 +137,7 @@ virtualenv==20.4.2
 virtualenv-clone==0.5.4
 watchgod==0.6
 wcwidth==0.2.5
-Werkzeug==2.2.1
+Werkzeug==2.2.3
 whitenoise==5.2.0
 wrapt==1.12.1
 xlrd==2.0.1
